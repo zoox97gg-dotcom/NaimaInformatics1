@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Naima's Frozen Yogurt Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Naima's Frozen Yogurt</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="flavors.html">Flavors</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+        <h1>Get In Touch With Us</h1>
+
+        <div class="contact-info">
+            <p><span class="icon">📍</span> <strong>Address:</strong> 123 Sweet Street, Yogurt City, YT 12345</p>
+            <p><span class="icon">📞</span> <strong>Phone:</strong> (555) 123-4567</p>
+            <p><span class="icon">✉️</span> <strong>Email:</strong> hello@naimasyogurt.com</p>
+            <p><span class="icon">🕐</span> <strong>Hours:</strong> Monday - Sunday: 10:00 AM - 10:00 PM</p>
+            <p><span class="icon">📱</span> <strong>Instagram:</strong> @naimasfroyo</p>
+            <p><span class="icon">📘</span> <strong>Facebook:</strong> Naima's Frozen Yogurt Shop</p>
+        </div>
+
+        <div style="background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 30px;">
+            <h2 style="color: #d63384; margin-bottom: 20px;">Send Us a Message</h2>
+            <form onsubmit="event.preventDefault(); alert('Thank you for your message! We will get back to you soon!');">
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; color: #555; font-weight: bold;">Your Name:</label>
+                    <input type="text" placeholder="Enter your name" style="width: 100%; padding: 12px; border: 2px solid #ff9a9e; border-radius: 10px; font-size: 16px;" required>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; color: #555; font-weight: bold;">Your Email:</label>
+                    <input type="email" placeholder="Enter your email" style="width: 100%; padding: 12px; border: 2px solid #ff9a9e; border-radius: 10px; font-size: 16px;" required>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; color: #555; font-weight: bold;">Message:</label>
+                    <textarea placeholder="Tell us what you think..." rows="5" style="width: 100%; padding: 12px; border: 2px solid #ff9a9e; border-radius: 10px; font-size: 16px; resize: vertical;" required></textarea>
+                </div>
+                <button type="submit" style="background: linear-gradient(135deg, #d63384, #ff6b9d); color: white; border: none; padding: 15px 50px; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; transition: all 0.3s ease;">
+                    📨 Send Message
+                </button>
+            </form>
+        </div>
+
+        <div class="map-placeholder">
+            🗺️ Map: 123 Sweet Street, Yogurt City
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Naima's Frozen Yogurt</h4>
+                <p>Bringing joy one scoop at a time since 2024. Visit us for the best frozen yogurt experience in town!</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="flavors.html">Our Flavors</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p>📍 123 Sweet Street, Yogurt City</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ hello@naimasyogurt.com</p>
+                <p>🕐 Open Daily: 10AM - 10PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Student ID: 25319043 | Name: Naima Aisyah | Naima's Frozen Yogurt Shop &copy; 2024</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naima's Frozen Yogurt Shop - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Naima's Frozen Yogurt</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="flavors.html">Flavors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Welcome to Naima's Frozen Yogurt!</h1>
+        <p>Delicious, creamy, and made with love. Discover our amazing range of frozen yogurt flavors and toppings that will make your day sweeter!</p>
+        <a href="flavors.html" class="btn-primary">Explore Our Flavors</a>
+    </section>
+
+    <!-- WELCOME MESSAGE (JavaScript - Requirement A) -->
+    <div id="welcomeMessage" class="welcome-box"></div>
+
+    <!-- TEMPLATE LINK (Requirement E) -->
+    <div class="template-link-box">
+        <p><strong>📋 Original Template:</strong> This website was built by modifying a free template.</p>
+        <p><a href="https://freewebsitetemplates.com/preview/frozenyogurtshop/index.html" target="_blank">
+            👉 Click here to view the original template from FreeWebsiteTemplates.com
+        </a></p>
+    </div>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+        <div class="feature-card">
+            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400" alt="Fresh Ingredients">
+            <h3>🍓 Fresh Ingredients</h3>
+            <p>We use only the freshest fruits and highest quality dairy to create our delicious frozen yogurt. Every scoop is packed with natural goodness!</p>
+        </div>
+        <div class="feature-card">
+            <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400" alt="Endless Toppings">
+            <h3>🍫 Endless Toppings</h3>
+            <p>From fresh berries to crunchy nuts, chocolate chips to gummy bears — customize your yogurt with over 30 amazing toppings!</p>
+        </div>
+        <div class="feature-card">
+            <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400" alt="Healthy Choice">
+            <h3>💪 Healthy & Delicious</h3>
+            <p>Our frozen yogurt is low in fat, rich in probiotics, and contains live active cultures. A treat you can feel good about eating!</p>
+        </div>
+    </section>
+
+    <!-- FLAVOR BUILDER (JavaScript Interactive - Requirement C) -->
+    <section class="flavor-builder">
+        <h2>🎨 Build Your Dream Yogurt!</h2>
+        <div class="builder-box">
+            <h3>Choose your favorite combination and see what we recommend!</h3>
+
+            <label for="baseFlavor">Pick Your Base Flavor:</label>
+            <select id="baseFlavor">
+                <option value="">-- Select a flavor --</option>
+                <option value="vanilla">Classic Vanilla</option>
+                <option value="strawberry">Fresh Strawberry</option>
+                <option value="chocolate">Rich Chocolate</option>
+                <option value="mango">Tropical Mango</option>
+                <option value="matcha">Green Tea Matcha</option>
+                <option value="blueberry">Wild Blueberry</option>
+            </select>
+
+            <label for="topping">Pick Your Favorite Topping:</label>
+            <select id="topping">
+                <option value="">-- Select a topping --</option>
+                <option value="berries">Mixed Berries</option>
+                <option value="choco">Chocolate Chips</option>
+                <option value="nuts">Crushed Almonds</option>
+                <option value="caramel">Caramel Drizzle</option>
+                <option value="sprinkles">Rainbow Sprinkles</option>
+                <option value="cookie">Cookie Crumbs</option>
+            </select>
+
+            <label for="customerName">Your Name:</label>
+            <input type="text" id="customerName" placeholder="Enter your name here...">
+
+            <button onclick="buildYogurt()">✨ Create My Yogurt!</button>
+
+            <div id="resultBox" class="result-box">
+                <h3 id="resultTitle"></h3>
+                <p id="resultText"></p>
+                <p id="resultPrice"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Requirement B) -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Naima's Frozen Yogurt</h4>
+                <p>Bringing joy one scoop at a time since 2024. Visit us for the best frozen yogurt experience in town!</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="flavors.html">Our Flavors</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p>📍 123 Sweet Street, Yogurt City</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ hello@naimasyogurt.com</p>
+                <p>🕐 Open Daily: 10AM - 10PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Student ID: 25319043 | Name: Naima Aisyah | Naima's Frozen Yogurt Shop &copy; 2024</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ============================================
+        // REQUIREMENT A: Welcome Message (only on index page)
+        // ============================================
+        function showWelcomeMessage() {
+            const now = new Date();
+            const hour = now.getHours();
+            let greeting = "Hello";
+
+            if (hour >= 5 && hour < 12) {
+                greeting = "Good Morning";
+            } else if (hour >= 12 && hour < 17) {
+                greeting = "Good Afternoon";
+            } else if (hour >= 17 && hour < 21) {
+                greeting = "Good Evening";
+            } else {
+                greeting = "Good Night";
+            }
+
+            const welcomeDiv = document.getElementById('welcomeMessage');
+            welcomeDiv.innerHTML = `
+                <h2>👋 ${greeting}, Yogurt Lover!</h2>
+                <p>Welcome to Naima's Frozen Yogurt Shop! We're so happy you're here. 
+                Today is ${now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}. 
+                Come on in and treat yourself to something sweet!</p>
+            `;
+        }
+
+        // Run welcome message when page loads
+        showWelcomeMessage();
+
+        // ============================================
+        // REQUIREMENT C: Interactive JS Function
+        // Build Your Yogurt - takes user input
+        // ============================================
+        function buildYogurt() {
+            const base = document.getElementById('baseFlavor').value;
+            const topping = document.getElementById('topping').value;
+            const name = document.getElementById('customerName').value.trim();
+            const resultBox = document.getElementById('resultBox');
+            const resultTitle = document.getElementById('resultTitle');
+            const resultText = document.getElementById('resultText');
+            const resultPrice = document.getElementById('resultPrice');
+
+            // Validation
+            if (!base || !topping || !name) {
+                alert("Please fill in all fields to build your yogurt!");
+                return;
+            }
+
+            // Flavor descriptions
+            const flavorDescriptions = {
+                vanilla: "Classic Vanilla",
+                strawberry: "Fresh Strawberry",
+                chocolate: "Rich Chocolate",
+                mango: "Tropical Mango",
+                matcha: "Green Tea Matcha",
+                blueberry: "Wild Blueberry"
+            };
+
+            const toppingDescriptions = {
+                berries: "Mixed Berries",
+                choco: "Chocolate Chips",
+                nuts: "Crushed Almonds",
+                caramel: "Caramel Drizzle",
+                sprinkles: "Rainbow Sprinkles",
+                cookie: "Cookie Crumbs"
+            };
+
+            // Fun messages based on combination
+            const funMessages = {
+                "vanilla-berries": "A timeless classic! The sweetness of berries perfectly complements the smooth vanilla.",
+                "vanilla-choco": "You can't go wrong with vanilla and chocolate — a match made in dessert heaven!",
+                "strawberry-sprinkles": "So colorful and fun! This combo is like a party in a cup!",
+                "chocolate-caramel": "Oh my! Chocolate + Caramel = Pure indulgence. Enjoy every bite!",
+                "mango-cookie": "Tropical meets crunchy! An adventurous choice for an adventurous soul!",
+                "matcha-nuts": "A sophisticated choice! The earthy matcha pairs beautifully with crunchy almonds.",
+                "blueberry-berries": "Berry overload! For those who just can't get enough of that fruity goodness!"
+            };
+
+            const comboKey = base + "-" + topping;
+            const message = funMessages[comboKey] || 
+                `Great choice, ${name}! ${flavorDescriptions[base]} with ${toppingDescriptions[topping]} is absolutely delicious!`;
+
+            // Calculate a fun "price" based on name length (just for fun!)
+            const basePrice = 4.50;
+            const toppingPrice = 1.50;
+            const totalPrice = (basePrice + toppingPrice).toFixed(2);
+
+            resultTitle.textContent = `🎉 ${name}'s Custom Yogurt is Ready!`;
+            resultText.textContent = message;
+            resultPrice.innerHTML = `<strong>💰 Price: $${totalPrice}</strong> | Flavor: ${flavorDescriptions[base]} + ${toppingDescriptions[topping]}`;
+
+            resultBox.classList.add('show');
+
+            // Scroll to result
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>
